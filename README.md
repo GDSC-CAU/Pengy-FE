@@ -130,7 +130,7 @@ using flutter
 
 | BeforeCamera | Loading Analysis Result |  Space Analysis Result | 
 | :------------: | :------------: | :------------: |
-|<img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/b2e3c14d-603a-4d7a-9e14-fd1d98d99cbe" height="400"/>|<img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/6ad29a2a-639d-482d-8526-bf64ee92847f" height="400"/> <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/3cb41d27-89b1-4721-a086-fa8107d196d2" height="400"/>|<img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/c1ef7d2e-17c7-44f4-be6c-080542930870" height="400"/>|
+|<img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/b2e3c14d-603a-4d7a-9e14-fd1d98d99cbe" height="400"/>|<img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/6ad29a2a-639d-482d-8526-bf64ee92847f" height="300"/> <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/3cb41d27-89b1-4721-a086-fa8107d196d2" height="300"/>|<img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/c1ef7d2e-17c7-44f4-be6c-080542930870" height="400"/>|
 
 | Space Check List | Fire Hazard Info | Space Analysis Result | 
 | :------------: | :------------: | :------------: |
