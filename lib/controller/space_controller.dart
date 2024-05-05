@@ -116,12 +116,12 @@ class SpaceController extends GetxController {
         infoWindow: InfoWindow(
           title: space.spaceName,
           snippet: space.category == SpaceCategoryType.house
-              ? '집'
+              ? 'HOME'
               : space.category == SpaceCategoryType.office
-              ? '직장'
+              ? 'OFFICE'
               : space.category == SpaceCategoryType.cafe
-              ? '카페'
-              : '기타',
+              ? 'RETAIL'
+              : 'ETC',
         ),
         onTap: () {
           _showModalBottomSheet(context, space);
@@ -301,15 +301,15 @@ class SpaceController extends GetxController {
                                   },
                                   child: Text(
                                     category == SpaceCategoryType.house
-                                        ? '집'
+                                        ? 'HOME'
                                         : category == SpaceCategoryType.office
-                                        ? '직장'
+                                        ? 'OFFICE'
                                         : category == SpaceCategoryType.cafe
-                                        ? '카페'
+                                        ? 'RETAIL'
                                         : category ==
                                         SpaceCategoryType.etc
-                                        ? '기타'
-                                        : '전체',
+                                        ? 'ETC'
+                                        : 'ALL',
                                     style: TextStyle(
                                       fontFamily: 'OHSQUARE',
                                       fontSize: 12,
@@ -404,7 +404,7 @@ class SpaceController extends GetxController {
                       bottom: 22,
                       child: SizedBox(
                         height: 50,
-                        width: 130,
+                        width: 150,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: BUTTON_BLUE,
@@ -423,7 +423,7 @@ class SpaceController extends GetxController {
                                 width: 4,
                               ),
                               Text(
-                                '지도보기',
+                                'Go To Map',
                                 style: TextStyle(
                                   fontFamily: 'OHSQUARE',
                                   fontSize: 16,
@@ -479,12 +479,12 @@ class SpaceCategoryIcon extends StatelessWidget {
         ),
         Text(
           spaceCategoryType == SpaceCategoryType.house
-              ? '집'
+              ? 'HOME'
               : spaceCategoryType == SpaceCategoryType.office
-              ? '직장'
+              ? 'OFFICE'
               : spaceCategoryType == SpaceCategoryType.cafe
-              ? '카페'
-              : '기타',
+              ? 'RETAIL'
+              : 'ETC',
           style: TextStyle(
             fontFamily: 'OHSQUAREAIR',
             fontSize: 15,

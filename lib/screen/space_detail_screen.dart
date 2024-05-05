@@ -335,7 +335,7 @@ void showDetailModal(BuildContext context, int id, String imgUrl) {
                                                   width: 5,
                                                 ),
                                                 Text(
-                                                  '화재 관련 정보 보기',
+                                                  'More Information',
                                                   style: TextStyle(
                                                     fontFamily: 'OHSQUARE',
                                                     fontSize: 16,
