@@ -84,7 +84,7 @@ using flutter
 ```
 3. Set local.properties in root project/android/local.properties
 ```bash
-  google.map.key=*Put your Google Maps API KEY*
+  MAP_KEY=*Put your Google Maps API KEY*
 ```
 4. Run with Android Studio
 
