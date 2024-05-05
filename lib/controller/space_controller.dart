@@ -106,6 +106,21 @@ class SpaceController extends GetxController {
     }
   }
 
+  BitmapDescriptor getMarkerColor(int? temperature) {
+    if (temperature == null) {
+      return BitmapDescriptor.defaultMarker; // 기본 색상
+    } else if (temperature <= 20) {
+      return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen);
+    } else if (temperature <= 40) {
+      return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueYellow);
+    } else if (temperature <= 60) {
+      return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange);
+    } else if (temperature <= 80) {
+      return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
+    } else {
+      return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRose);
+    }
+  }
   Set<Marker> getMarkers(BuildContext context) {
     fetchMySpaces();
     return spaces.map((space) {
@@ -113,15 +128,10 @@ class SpaceController extends GetxController {
       return Marker(
         markerId: MarkerId('${space.id}'),
         position: LatLng(coords[0], coords[1]),
+        icon: getMarkerColor(space.average_temperature),
         infoWindow: InfoWindow(
           title: space.spaceName,
-          snippet: space.category == SpaceCategoryType.house
-              ? 'HOME'
-              : space.category == SpaceCategoryType.office
-              ? 'OFFICE'
-              : space.category == SpaceCategoryType.cafe
-              ? 'RETAIL'
-              : 'ETC',
+          snippet: 'Danger Temperature: ${space.average_temperature}°C',
         ),
         onTap: () {
           _showModalBottomSheet(context, space);
