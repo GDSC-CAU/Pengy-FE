@@ -136,7 +136,7 @@ using flutter
 | :------------: | :------------: | :------------: |
 | <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/a6293bc9-7d23-4954-a67f-7cdfeb618327" height="400"/> | <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/e634a62a-77a9-4266-8fcf-b8e1af653112" height="400"/> | <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/6089e638-3fa0-477f-9c1c-8bc479dcabbb" height="400"/>|
 
-### Prompt that we wrote
+## Prompt that we wrote
 ```
 def construct_prompt(image_url):
     image_url = Image.open(image_url)
