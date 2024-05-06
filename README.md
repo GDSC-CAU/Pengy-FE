@@ -136,6 +136,48 @@ using flutter
 | :------------: | :------------: | :------------: |
 | <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/a6293bc9-7d23-4954-a67f-7cdfeb618327" height="400"/> | <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/e634a62a-77a9-4266-8fcf-b8e1af653112" height="400"/> | <img src="https://github.com/GDSC-CAU/Pengy-FE/assets/100814191/6089e638-3fa0-477f-9c1c-8bc479dcabbb" height="400"/>|
 
+### Prompt that we wrote
+```
+def construct_prompt(image_url):
+    image_url = Image.open(image_url)
+    """Constructs the detailed prompt for the AI model based on the image URL."""
+    task_details = (
+        "Let's think step by step. Demonstrate deep expertise in fire safety. "
+        "ROLE: You are a fire investigation expert; "
+        "YOUR TASK IS: "
+        "0. Describe the place or object in the photo in ONE PHRASE"
+        """1. Specify the degree of fire vulnerability out of 100, 
+            Consider the following factors to assess the degree of fire vulnerability: 
+            i) Visibility of combustible materials: Assess the amount and type of combustible materials visible in the photo. For example, if stacks of paper, cardboard boxes, furniture (made of wood), etc. are visible in the picture, this can increase the risk of fire.;
+            ii) Condition of electrical equipment and wiring: Identify the visible condition of electrical equipment and potential hazards. For example, old or damaged electrical outlets, misplaced wires, and multi-taps that appear to be overloaded.;
+            iii) Fire alarm and safety equipment: Verify the presence and condition of fire alarms, sprinklers, fire extinguishers, etc. Assess whether they are visible in photos and in easily accessible locations.;
+            iv) Density and organization of the space: Assess how well organized the space is and how crowded it is. Excessive stacking of items or obstructions can increase the risk by blocking escape routes in the event of a fire.;
+            v) Visibility of ventilation: Assess the size and number of vents or windows. Well-designed ventilation is important for quickly removing smoke and heat in the event of a fire.;
+            Specify the degree of fire vulnerability out of 100. 
+            ONLY NUMERIC VALUES ARE ACCEPTED.
+        """
+        "2. Identify the fire hazards in the photo and return the specific location of it, "
+        "3. Advise on measures to mitigate the fire risks according to the 'priority', "
+        "4. List 'fewer than three objects' that are likely to cause a fire in the photo, in one sentence without explanations. "
+        "If the objects are similar, use a representative term. E.g., refrigerator, washing machine, air conditioner..."
+        "Ensure : that your answer is unbiased, detailed and avoids relying on stereotypes. Demonstrate deep expertise in fire safety."
+        "NOTE : I will give you $12,000 tip for a better solution."
+    )
+    response_format = (
+        "JSON RESPONSE FORMAT: {"
+            "\"Description\": \"<phrase>\", "
+            "\"Degree of Fire Danger (out of 100)\": \"<number>\", "
+            "\"Identified Fire Hazards\": \"<object1>\", \"<object2>\", ..."
+            "\"Mitigation Measures\": \"<text>\", "
+            "\"Additional Recommendation\": \"<text>\", "
+            "\"Top 3 fire Hazards objects\": \"<object1>\, \"<object2>\", ..."
+        "}"
+    )
+    full_prompt = f"\"prompt:{{ {task_details} {response_format} }}\""
+    prompt_parts = [image_url, "\n\n", full_prompt, "\n\n\n"]
+    return prompt_parts
+```
+
 
 
 ## Team
